@@ -10,18 +10,20 @@
         <div class="card-body">
             <h5 class="card-title">{{ product.name }}</h5>
             <p class="card-text">
-                {{ product.description.substring(0, 65) }}...
+                {{ product.description ? product.description.substring(0, 65) + '...' : '' }}
             </p>
             <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
     </div>
 </template>
+
 <script>
     export default {
         name: "ProductBox",
         props: ["product"]
     }
 </script>
+
 <style scoped>
     .card-img-top {
         object-fit: cover;
